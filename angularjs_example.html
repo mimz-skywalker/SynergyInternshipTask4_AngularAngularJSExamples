@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app = "MyFristApp">
+<html ng-app ng-controller = "mycontroller as login">
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
@@ -9,8 +9,16 @@
     <script src='angular.js'></script>
 </head>
 <body>
-    <p>
-        Hello World!
-    </p>
+    <div>
+        <p> Login Page </p>
+    <script>
+        var app = angular.module("mycontroller", []);
+    </script>
+        Username: <input type = "text" ng-model = "login.username" required>
+        Password: <input type = "text" ng-model = "login.password" required>
+    </div>
+    <div>
+        <button type = "button" ng-click = "Login(username, password)""> Log in </button>
+    </div>
 </body>
 </html>
