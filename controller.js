@@ -1,9 +1,14 @@
-angular.module('controller', [])
-.controller('ExampleController', ['$username', "$pass", function( $username, $pass) {
-  $username = 'maria';
-  $pass = 'maria123';
-  function Login($username, $pass){
-     
-    $window.alert('alvnl/adfn');
-  };
-}]);
+var app = angular.module('ExampleApp', [])
+app.controller('ExampleController', function($scope, $window){
+    $scope.username = 'maria';
+    $scope.pass = 'maria123';
+    $scope.inputPass = ' ';
+    $scope.inputUsername = ' ';
+    $scope.mistake = 'Wrong credentials!';
+
+    $scope.login = function (inputUsername, inputPass){
+        if($scope.username != $scope.inputUsername || $scope.pass != $scope.inputPass){
+            $window.alert(mistake);
+        }
+    };
+});
