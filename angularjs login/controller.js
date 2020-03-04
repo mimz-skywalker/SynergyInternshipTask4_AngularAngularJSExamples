@@ -6,9 +6,10 @@ app.controller('ExampleController', function($scope, $window){
     $scope.inputUsername = ' ';
     $scope.mistake = 'Wrong credentials!';
 
-    $scope.login = function (inputUsername, inputPass){
-        if($scope.username != $scope.inputUsername || $scope.pass != $scope.inputPass){
-            $window.alert(mistake);
-        }
+    $scope.login = function(){
+        //if(($scope.username != $scope.inputUsername) || ($scope.pass != $scope.inputPass)){
+            $window.alert("wrong credentials");
+            return;
+        //}
     };
 });

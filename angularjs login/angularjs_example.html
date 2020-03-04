@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script type="text/javascript">
+        var app = angular.module('ExampleApp', [])
+            app.controller('ExampleController', function($scope, $window){
+
+            $scope.Login = function(){
+                if(($scope.inputUsername != "maria") || ($scope.inputPass != "maria123")){
+                    $window.alert("wrong credentials");
+                    return;
+                }
+                else
+                {
+                    $window.alert("successful");
+                    $window.location.href = 'file:///D:/Internship/Synergy/SynergyInternshipTask4_AngularAngularJSExamples/HomePage.html';
+                    return;
+                }
+            };
+});
+    </script>
+    <div ng-app="ExampleApp" ng-controller = "ExampleController">
+        <p> Login Page </p>
+        Username: <input type = "text" ng-model = "inputUsername" required>
+        Password: <input type = "text" ng-model =  "inputPass" required>
+    </div>
+    <div>
+        <input type = "button" value = "Login" ng-click = "Login()"> Log in
+    </div>
+</body>
+</html>
